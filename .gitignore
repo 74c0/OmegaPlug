@@ -6,3 +6,5 @@ riderModule.iml
 libs/
 .vs/
 .idea/
+/Properties/PublishProfiles
+/OmegaPlug.csproj.user

@@ -26,11 +26,6 @@ public class Plugin : BasePlugin
 
         AddComponent<OmegaUpdateComponent>();
 
-        var client = new ButtplugClient("Example Client");
-        var connector = new ButtplugWebsocketConnector(new Uri("ws://127.0.0.1:12345"));
-
-        client.ServerDisconnect += ConnectPlug;
-
         ConnectPlug();
     }
 

@@ -12,7 +12,7 @@ OmegaPlug is a .NET 6 plugin designed for use with BepInEx and [_My Dystopian Ro
 ## Installation
 
 1. **Install BepInEx 6 (IL2CPP)** 
-   - [Download](https://builds.bepinex.dev/projects/bepinex_be/735/BepInEx-Unity.IL2CPP-win-x64-6.0.0-be.735%2B5fef357.zip) and extract BepInEx 6 to your game's root directory. BepInEx-`BepInEx-Unity.IL2CPP-win-x64-6.0.0-be.735%2B5fef357.zip` is what I used to make this.
+   - [Download](https://builds.bepinex.dev/projects/bepinex_be/735/BepInEx-Unity.IL2CPP-win-x64-6.0.0-be.735%2B5fef357.zip) and extract BepInEx 6 to your game's root directory. `BepInEx-Unity.IL2CPP-win-x64-6.0.0-be.735%2B5fef357.zip` is what I used to make this.
    - Run the game once to generate the `BepInEx` folder structure.
    - Close the game.
 

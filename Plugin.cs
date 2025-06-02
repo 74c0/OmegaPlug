@@ -59,9 +59,9 @@ public class Plugin : BasePlugin
     {
         if (intensity >= 0)
         {
-            if (intensity != 0) Plugin.Log.LogInfo($"!!! [VC] Vibrating with intensity: {intensity} !!!");
+            if (intensity != 0) Log.LogInfo($"~[VC] Vibrating with intensity: {intensity*100}%~");
 
-            foreach (ButtplugClientDevice device in Plugin.Client.Devices)
+            foreach (ButtplugClientDevice device in Client.Devices)
             {
                 _ = device.VibrateAsync((double)intensity);
             }
@@ -72,16 +72,6 @@ public class Plugin : BasePlugin
 public class OmegaUpdateComponent : MonoBehaviour
 {
     public static OmegaUpdateComponent Instance { get; private set; }
-    public enum CurrentType
-    {
-        None,
-        Live2DBlowjobController,
-        Live2DFuckController,
-        Live2DFuckControllerHover,
-        Live2DCowgirlController
-    }
-
-    public static CurrentType curType = CurrentType.None;
 
     public static bool isBoyMode = true;
 
@@ -97,19 +87,18 @@ public class OmegaUpdateComponent : MonoBehaviour
 
     public void Update()
     {
-        Live2DBlowjobController live2DBlowjobController = GameObject.FindObjectOfType<Live2DBlowjobController>();
-        Live2DFuckController live2DFuckController = GameObject.FindObjectOfType<Live2DFuckController>();
-        Live2DCowgirlController live2DCowgirlController = GameObject.FindObjectOfType<Live2DCowgirlController>();
-
-        curType = CurrentType.None;
+        //REFS
+        //Live2DBlowjobController live2DBlowjobController = GameObject.FindObjectOfType<Live2DBlowjobController>();
+        //Live2DFuckController live2DFuckController = GameObject.FindObjectOfType<Live2DFuckController>();
+        //Live2DCowgirlController live2DCowgirlController = GameObject.FindObjectOfType<Live2DCowgirlController>();
 
         if (isBoyMode) {
+            Live2DBlowjobController live2DBlowjobController = GameObject.FindObjectOfType<Live2DBlowjobController>();
             if (live2DBlowjobController != null)
-                curType = CurrentType.Live2DBlowjobController;
-            else if (live2DCowgirlController != null)
-                curType = CurrentType.Live2DCowgirlController;
-            else if (live2DFuckController != null)
-                curType = CurrentType.Live2DFuckController;
+            {
+                if (live2DBlowjobController.CurrentDepth > 0) Plugin.Log.LogInfo($"[BM][Blowjob] Depth: {live2DBlowjobController.CurrentDepth*100}%");
+                Plugin.Vibrate(live2DBlowjobController.CurrentDepth);
+            }
         } else {
             Live2DController l2C = GameObject.FindObjectOfType<Live2DController>();
             if (l2C == null) { Plugin.Log.LogWarning("Live2DController not found!"); return; }

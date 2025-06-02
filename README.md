@@ -1,6 +1,6 @@
 # OmegaPlug
 
-OmegaPlug is a .NET 6 plugin designed for use with BepInEx and _My Dystopian Robot Girlfriend_ It integrates with the library Buttplug and Harmony to extend game functionality to ButPlugIO toys.
+OmegaPlug is a .NET 6 plugin designed for use with BepInEx and [_My Dystopian Robot Girlfriend_](https://incontinentcell.itch.io/factorial-omega) It integrates with the library Buttplug and Harmony to extend game functionality to ButPlugIO toys.
 
 ## Features
 

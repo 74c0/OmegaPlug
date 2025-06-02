@@ -1,0 +1,70 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <AssemblyName>OmegaPlug</AssemblyName>
+        <Product>OmegaPlug</Product>
+        <Version>0.1.0</Version>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <LangVersion>latest</LangVersion>
+        <RestoreAdditionalProjectSources>
+            https://api.nuget.org/v3/index.json;
+            https://nuget.bepinex.dev/v3/index.json;
+            https://nuget.samboy.dev/v3/index.json
+        </RestoreAdditionalProjectSources>
+        <RootNamespace>OmegaPlug</RootNamespace>
+        <BaseOutputPath></BaseOutputPath>
+        <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
+        <OutputType>Library</OutputType>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="BepInEx.Unity.IL2CPP" Version="6.0.0-be.*" IncludeAssets="compile" />
+        <PackageReference Include="BepInEx.PluginInfoProps" Version="2.*" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="0Harmony">
+        <HintPath>libs\0Harmony.dll</HintPath>
+        <Private>False</Private>
+      </Reference>
+      <Reference Include="Buttplug">
+        <HintPath>libs\Buttplug.dll</HintPath>
+        <EmbedInteropTypes></EmbedInteropTypes>
+        <Private>True</Private>
+      </Reference>
+      <Reference Include="GameAssembly">
+        <HintPath>libs\GameAssembly.dll</HintPath>
+        <Private>False</Private>
+      </Reference>
+      <Reference Include="Il2Cppmscorlib">
+        <HintPath>libs\Il2Cppmscorlib.dll</HintPath>
+        <Private>False</Private>
+      </Reference>
+      <Reference Include="Newtonsoft.Json">
+        <HintPath>libs\Newtonsoft.Json.dll</HintPath>
+        <Private>False</Private>
+      </Reference>
+      <Reference Include="UnityEngine">
+        <HintPath>libs\UnityEngine.dll</HintPath>
+        <Private>False</Private>
+      </Reference>
+      <Reference Include="UnityEngine.CoreModule">
+        <HintPath>libs\UnityEngine.CoreModule.dll</HintPath>
+        <Private>False</Private>
+      </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="libs\Buttplug.dll">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="libs\Newtonsoft.Json.dll">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Properties\" />
+    </ItemGroup>
+</Project>
